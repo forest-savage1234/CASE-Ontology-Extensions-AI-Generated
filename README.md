@@ -4,7 +4,7 @@
 
 This repository contains AI-generated extension ontologies for the [CASE (Cyber-investigation Analysis Standard Expression)](https://caseontology.org/) Investigation namespace. These extensions were created for **Project VIC's Autopsy-Rust project** to improve explainability of digital forensic investigation outputs.
 
-All extensions in this repository are scoped to the `case/investigation` namespace domain. UCO-level extensions are maintained separately in the [Unified Cyber Ontology Extensions (AI-Generated)](https://github.com/vulnmaster/Unifed-Cyber-Ontology-Extensions-AI-Generated) repository.
+All extensions in this repository are scoped to the `case/investigation` namespace domain. UCO-level extensions are maintained separately in the [Unified Cyber Ontology Extensions (AI-Generated)](https://github.com/vulnmaster/Unified-Cyber-Ontology-Extensions-AI-Generated) repository.
 
 ## Extension: `investigation-ai-ext`
 
@@ -66,14 +66,14 @@ Several Autopsy-Rust artifact types map naturally to the investigation extension
 | **TimelineEvent** (Plaso) | Observable with `observable_ai_ext:TimelineEventFacet`; action → `producedFinding` | Timeline events can be linked to the Plaso InvestigativeAction as results/findings |
 | **AnalysisResult** (Malware Scan, Object Detection) | Observable with `MalwareHitFacet` / `ObjectDetectionFacet` (UCO); action → `producedFinding` | Module-specific facets in UCO; the producing action is typed (e.g. Malware Scanning, Object Detection) in `action_ai_ext` |
 
-The `producedFinding` property (subPropertyOf `uco-action:result`) links `InvestigativeAction` nodes to their `Finding` outputs. The UCO `action-ai-ext` vocabulary terms (see the [UCO Extensions](https://github.com/vulnmaster/Unifed-Cyber-Ontology-Extensions-AI-Generated) repository) define the specific action types whose results can flow into Findings (e.g. `PlasoTimelineExtraction`, `MalwareScanning`, `ObjectDetection`, `iOSArtifactExtraction`).
+The `producedFinding` property (subPropertyOf `uco-action:result`) links `InvestigativeAction` nodes to their `Finding` outputs. The UCO `action-ai-ext` vocabulary terms (see the [UCO Extensions](https://github.com/vulnmaster/Unified-Cyber-Ontology-Extensions-AI-Generated) repository) define the specific action types whose results can flow into Findings (e.g. `PlasoTimelineExtraction`, `MalwareScanning`, `ObjectDetection`, `iOSArtifactExtraction`).
 
 ## Compatibility
 
 - **Base ontology:** CASE v1.4.0 / UCO v1.4.0
 - **Import chain:** `investigation-ai-ext` imports `case/investigation/1.4.0`, `uco/action/1.4.0`, and `uco/core/1.4.0`
-- Live official CASE/UCO is 1.5.0. This repository still documents and imports 1.4.0. It has not been retargeted.
-- These extensions are additive and do not modify or conflict with base CASE/UCO terms
+- These extensions are additive. The versioned imports above pin CASE/UCO 1.4.0;
+  compatibility with later CASE/UCO releases requires a separate review.
 
 ## Origin
 
